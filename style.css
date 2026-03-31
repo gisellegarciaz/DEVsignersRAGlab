@@ -1,0 +1,44 @@
+.stButton>button { 
+    width: 100%; 
+    background-color: #bd93f9; 
+    color: #282a36; 
+    font-weight: bold; 
+    border-radius: 20px; 
+    border: none; 
+    transition: 0.3s;
+}
+
+.stButton>button:hover { 
+    background-color: #ff79c6 !important; 
+    color: white !important; 
+}
+
+.sidebar-header { 
+    padding: 0px 0px 10px 0px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    border-bottom: 1px solid #44475a; 
+    margin-bottom: 20px; 
+}
+
+.history-scroll { 
+    max-height: 300px; 
+    overflow-y: auto; 
+    padding-right: 5px; 
+}
+
+/* Chat Input Styling */
+[data-testid="stChatInput"] textarea { 
+    min-height: 100px !important; 
+    background-color: transparent !important; 
+    border: none !important; 
+    color: #f8f8f2 !important; 
+    padding-top: 15px !important; 
+}
+
+[data-testid="stChatInput"] > div { 
+    background-color: #44475a !important; 
+    border: 1px solid #6272a4 !important; 
+    border-radius: 15px !important; 
+}
