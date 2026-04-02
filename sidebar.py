@@ -1,12 +1,10 @@
-# components.py
 import streamlit as st
 from config import get_base64_image, LOGO_PATH
 
-def render_sidebar(process_pdf_func, init_wiki_func):
+def render_sidebar(process_file_func, init_wiki_func):
     img_base64 = get_base64_image(LOGO_PATH)
     
     with st.sidebar:
-
         # Header
         st.markdown(f"""
             <div class='sidebar-header'>
@@ -20,11 +18,11 @@ def render_sidebar(process_pdf_func, init_wiki_func):
 
         # Contexto Dinâmico (PDF ou Wiki)
         st.subheader("Anexe um PDF")
-        pdf_file = st.file_uploader("Anexe um PDF", type="pdf", label_visibility="collapsed")
+        pdf_file = st.file_uploader("Anexe PDF ou HTML", type=["pdf", "html"], label_visibility="collapsed")
         
         if pdf_file:
             st.info(f"📄 {pdf_file.name}")
-            retriever = process_pdf_func(pdf_file)
+            retriever = process_file_func(pdf_file)
         else:
             st.caption("Modo: Wikipedia Local")
             retriever = init_wiki_func()

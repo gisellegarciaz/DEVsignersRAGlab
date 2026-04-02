@@ -1,7 +1,7 @@
 import streamlit as st
 from config import load_css
 from sidebar import render_sidebar
-from rag_engine import process_pdf, init_wiki_rag, get_llm
+from rag_engine import process_file, init_wiki_rag, get_llm
 from langchain_core.messages import HumanMessage, AIMessage
 
 # 1. SETUP
@@ -16,12 +16,15 @@ if "resposta_atual" not in st.session_state: st.session_state.resposta_atual = "
 if "gerou_agora" not in st.session_state: st.session_state.gerou_agora = False
 
 # 3. SIDEBAR COMPONENTIZADA
-pdf_file, current_retriever = render_sidebar(process_pdf, init_wiki_rag)
+pdf_file, current_retriever = render_sidebar(process_file, init_wiki_rag)
 
 # 4. ÁREA PRINCIPAL
-st.markdown("<h1 style='text-align: center; color: #bd93f9; margin-bottom: 0px;'>RAGlab</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #44475a; font-style: thin; font-size: 1.1rem; margin-top: 0px;'>A IA de busca dos devs, designers, devsigners e simpatizantes.</p>", unsafe_allow_html=True)
-st.markdown("<br>", unsafe_allow_html=True)
+st.markdown(f"""
+    <div class="main-header">
+        <h1>RAGlab</h1>
+        <p>A IA de busca dos devs, designers e devsigners.</p>
+    </div>
+""", unsafe_allow_html=True)
 
 if st.session_state.resposta_atual:
     with st.chat_message("user"): st.write(st.session_state.pergunta_atual)

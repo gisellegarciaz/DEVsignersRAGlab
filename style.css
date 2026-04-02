@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
 .stButton>button { 
     width: 100%; 
     background-color: #bd93f9; 
@@ -28,7 +30,6 @@
     padding-right: 5px; 
 }
 
-/* Chat Input Styling */
 [data-testid="stChatInput"] textarea { 
     min-height: 100px !important; 
     background-color: transparent !important; 
@@ -41,4 +42,28 @@
     background-color: #44475a !important; 
     border: 1px solid #6272a4 !important; 
     border-radius: 15px !important; 
+}
+
+.main-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.main-header h1 {
+    color: #bd93f9;
+    font-family: "Limelight", sans-serif;
+    font-size: 5rem; 
+    font-weight: 400;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.main-header p {
+    color: #6272a4;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: -10px;
 }
